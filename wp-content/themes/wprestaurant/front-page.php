@@ -1,4 +1,4 @@
 <?php get_header (); ?>
-echo "Front Page";
+    echo "Front Page";
 
 <?php get_footer (); ?>
