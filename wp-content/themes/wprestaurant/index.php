@@ -1,2 +1,5 @@
-<?php
-echo "Welcome to index.php";
+<?php get_header (); ?>
+
+<h1>Welcome to index.php</h1>
+
+<?php get_footer (); ?>

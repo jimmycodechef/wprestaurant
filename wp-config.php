@@ -26,7 +26,7 @@ define('DB_NAME', 'wprestaurant');
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'root');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -87,3 +87,6 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
+
+//To deal with Error Notice: ob_end_flush(): failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\wprestaurant\wp-includes\functions.php
+remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
