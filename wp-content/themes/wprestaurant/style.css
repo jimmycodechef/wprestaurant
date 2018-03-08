@@ -294,7 +294,12 @@ nav.site-nav ul li.current_page_item a{
     grid-template: 2fr 3fr;
 }
 
-
+@media screen and (min-width: 768px) {
+    .single-box{
+        grid-template-columns: unset;
+        grid-template-rows: 1fr 1fr;
+    }
+}
 
 
 
