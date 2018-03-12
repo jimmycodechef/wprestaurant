@@ -20,13 +20,13 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'wprestaurant');
+define('DB_NAME', 'wp_restaurant');
 
 /** MySQL database username */
 define('DB_USER', 'root');
 
 /** MySQL database password */
-define('DB_PASSWORD', 'root');
+define('DB_PASSWORD', 'mysql');
 
 /** MySQL hostname */
 define('DB_HOST', 'localhost');
@@ -46,14 +46,14 @@ define('DB_COLLATE', '');
  *
  * @since 2.6.0
  */
-define('AUTH_KEY',         '^1_,J@74,w^D7(P%}J6&)?@*j+mq+~+v(OE:o}6f6?C|Q~go>TJk5x(LcvdnkDIq');
-define('SECURE_AUTH_KEY',  'em42a(^pw>PG&jpnB58V=IknWrH9Gt2c|_ewKZ Z4%+Xyg#)x.9=U7a)*~kd -@R');
-define('LOGGED_IN_KEY',    '`9SzYI`Q# ?%%-GXNuvM}yTqa!z/[y)o_=]RStNX<s h+#id%h pzr3pdZ@?C{+%');
-define('NONCE_KEY',        '!O2--9BsfxK qJ#Kjr=Z7;TbP,cZOGS,%@^Jlo@)6T]*,Wqe[>0Jj,OiSyw4pUS*');
-define('AUTH_SALT',        'G%PGkAv,~HT-n<XV+-b(h>b(]{ N]@YB_BJ|%*./PjWHE](%J9o*:s5u/bM>U}g~');
-define('SECURE_AUTH_SALT', '._KG&dUT-<VZS<<Ep8y*]-.j0L9>P)6:A0I qqF[23,xl`On{!wlk4A+F_bF8K`h');
-define('LOGGED_IN_SALT',   '4y]|RScqY8T9GJM4;1.jmT&d&]jT>m8+G+Ywz`yww5Xa#z~1(]/6Czd<QS%|33~E');
-define('NONCE_SALT',       '<jqDSwX!|iK9i!F Rn*6 %qje1=FyHl ?~g}n?zBm?tJBt!F)Czqc9u9c!;;a:u.');
+define('AUTH_KEY',         'd~qSivh@D0X[M=qRE@}{g|KxC4_^+ggi:Qr=u5yMps44,;m$C/1/8,qT=V(2K8@O');
+define('SECURE_AUTH_KEY',  '5!E$}tE@e{4%M`zRi;B+(]Z<{^,`>Y&5QJsa>%kfVW:Dewp$0.T11%ruXRbs*=o{');
+define('LOGGED_IN_KEY',    'jYl(xETKE%*d}vgWzx@d+6-RF0rV>^Zh&QBB!V6v;Iroe)$Kpj+vYEKj%ZkziRoi');
+define('NONCE_KEY',        'DjO*O]C.4TV?ttz9HmcYq`^,>sAEN%l}A%Uy$tcXbTrALXkk0}e U:C_;X[bczue');
+define('AUTH_SALT',        'e`i5`-n$HQwlkv,R#KE_WP*{4:EZ=i6E={FK+?!H}^>>=Osx,6QzkasY}f34&$pu');
+define('SECURE_AUTH_SALT', 'C iUNZtr}O5`a~ad!q1xi7-Ep}Mslx:K_)UUJar-,)o2DF#M4;UY:7IT?{TXLHNV');
+define('LOGGED_IN_SALT',   ' 9+V,A4w/c,o5k7j)Twsl,-{ENAhs>?9A)|:FR%LqA],:<h2q+8$thOEa0tHt+yx');
+define('NONCE_SALT',       's?]#:!Tp8 fQhpPB}AuCbq{T<KR|joXsHn(MH/.#LZQE AbRHX3`p<qRN@iY~T[8');
 
 /**#@-*/
 
@@ -63,7 +63,7 @@ define('NONCE_SALT',       '<jqDSwX!|iK9i!F Rn*6 %qje1=FyHl ?~g}n?zBm?tJBt!F)Czq
  * You can have multiple installations in one database if you give each
  * a unique prefix. Only numbers, letters, and underscores please!
  */
-$table_prefix  = 'wp_';
+$table_prefix  = 'aswp_';
 
 /**
  * For developers: WordPress debugging mode.
@@ -77,7 +77,7 @@ $table_prefix  = 'wp_';
  *
  * @link https://codex.wordpress.org/Debugging_in_WordPress
  */
-define('WP_DEBUG', true);  //Set to True for Debugging - Ashman Malhotra
+define('WP_DEBUG', false);
 
 /* That's all, stop editing! Happy blogging. */
 
@@ -87,6 +87,3 @@ if ( !defined('ABSPATH') )
 
 /** Sets up WordPress vars and included files. */
 require_once(ABSPATH . 'wp-settings.php');
-
-//To deal with Error Notice: ob_end_flush(): failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\wprestaurant\wp-includes\functions.php
-remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
