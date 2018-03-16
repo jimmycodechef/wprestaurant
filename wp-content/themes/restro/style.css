@@ -12,9 +12,16 @@
 */
 html{
     box-sizing:border-box;
+    font-family: 'Open Sans', sans-serif;
 }
 *, *:before, *.after{
     box-sizing: inherit;
+}
+body{margin:0;}
+
+h1, h2, h3, h4, h5{
+    font-family: 'Raleway', sans-serif;
+    font-weight:900;
 }
 h1{
     font-size: 48px;
@@ -47,6 +54,10 @@ div#content{
 
 .sr-text{
     display:none;
+}
+
+.text-center{
+    text-align: center;
 }
 
 /** Header **/
@@ -179,7 +190,7 @@ nav.site-nav ul li a{
     font-weight: bold;
     text-transform: uppercase;
     color: #000000;
-    font-family:Arial, helvetica;
+    font-family: 'Raleway', sans-serif;
 }
 
 nav.site-nav ul li.current_page_item a{
@@ -199,6 +210,7 @@ nav.site-nav ul li.current_page_item a{
         display: block;
         color:white;
         text-align: center;
+        font-family: 'Raleway', sans-serif;
     }
 }
 @media only screen and (min-width:768px){
@@ -206,3 +218,260 @@ nav.site-nav ul li.current_page_item a{
         display: none;
     }
 }
+
+/** Hero Image **/
+.hero{
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    height:450px;
+    display: table;
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    position: relative;
+}
+
+.hero::after{
+    content: '';
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background-color: rgba(0,0,0,.6); /* The last value is alph-channel for transperancy*/
+}
+
+.hero .hero-content{
+    display: table-cell;
+    vertical-align: middle;
+    color:#ffffff;
+    z-index:2;
+    position: relative;
+}
+
+@media only screen and (min-width:768px){
+    .hero-text{
+        width: 80%;
+        margin:0 auto;
+    }
+}
+
+@media only screen and (min-width:992px){
+    .hero-text{
+        width: 60%;
+    }
+}
+
+.main-content{
+    padding:60px;
+    background-color:white;
+    position: relative;
+}
+
+@media only screen and (min-width:768px) {
+    .main-content{
+        margin-top: -90px;
+    }
+}
+
+.content-text{
+    font-size: 18px;
+    line-height: 50px;
+}
+
+/***********************************************************************************************************************/
+/*************************************************** Box Information ***************************************************/
+/***********************************************************************************************************************/
+.box-information{
+    display:grid;
+    /** grid-template-columns: 1fr 1fr 1fr; **/    /** 1 Fraction e.g. 33%  | Another solution is : 200px 300px 600px   for example. **/
+                                        /** repeat(3, 1fr)  => 1fr 1fr 1fr   i.e. Repeat 3 times**/
+}
+
+.single-box img {
+    width: 100%;  /** 100% of 1fr (1 Fraction)**/
+}
+
+@media only screen and (min-width:768px) {
+    .box-information{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.single-box{
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    color:white;
+    text-align:center;
+}
+
+@media only screen and (min-width:768px) {
+    .single-box{
+        grid-template-columns: unset;   /* Left to Right */
+        grid-template-rows: 1fr 1fr;    /* Top to Bottom */
+    }
+}
+
+.single-box:nth-child(1){
+    background-color: #f19f30;
+}
+.single-box:nth-child(2){
+    background-color: #127427;
+}
+.single-box:nth-child(3){
+    background-color: #a61206;
+}
+
+    /** Swapping the position of image and content in 2,d column**/
+    @media only screen and (min-width:768px) {
+        .single-box:nth-child(2) img{
+            order:2;
+        }
+
+        .single-box:nth-child(2) div{
+            order:1;
+        }
+    }
+
+    .content-box{
+        display:grid;
+        grid-template-rows: 10% 20% 60% 10%;
+        grid-template-areas: "."
+                             "top"
+                             "text"
+                              ".";
+    }
+
+    @media only screen and (min-width:768px) {
+        .content-box{
+            grid-template-rows: 20% 30% 30% 20%;
+        }
+    }
+
+    .content-box *{
+        align-self: center;
+    }
+
+    @media only screen and (min-width:768px) {
+        .single-box:nth-child(2) img{
+            order:2;
+        }
+
+        .single-box:nth-child(2) div{
+            order:1;
+        }
+    }
+
+    .content-box h3{
+        grid-area: top;
+        margin: 5px 0;
+        font-size:20px;
+        text-transform: uppercase;
+        font-weight: 700;
+    }
+    .content-box p{
+        grid-area: text;
+    }
+
+    /** Told that following code removes green line below images **/
+    .box-information .single-box img{
+        width: 100%;
+        display:block;
+    }
+/***********************************************************************************************************************/
+/******************************************************** Footer *******************************************************/
+/***********************************************************************************************************************/
+footer{
+    margin-top: 30px;
+    padding: 30px 0;
+    border-top: 1px solid #c1c1c1;
+    text-align: center;
+}
+
+footer nav ul{
+    list-style: none;
+}
+
+footer nav ul li {
+    display: inline;
+}
+
+footer nav ul li:last-child .seperator{
+    display: none;
+}
+
+footer nav ul li a{
+    color:#000000;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size:16px;
+    text-decoration: none;
+}
+
+footer .location{
+    margin-top: 30px;
+}
+
+footer p{
+    margin:0 0 5px 0;
+    font-size: 14px;
+}
+
+footer p.copyright{
+    margin-top: 20px;
+}
+
+/***********************************************************************************************************************/
+/******************************************* Grid - Our-Menu.php for menu.php ******************************************/
+/***********************************************************************************************************************/
+img{
+    max-width:100%;
+    height:auto;
+}
+@media only screen and (min-width:768px){
+    .container-grid{
+        margin-left: -10px;
+        margin-right: -10px;
+    }
+    .container-grid::after{
+        content:'';
+        display: block;
+        clear:both;
+    }
+    [class*='columns']{
+        padding:0 10px;
+        float:left;
+    }
+    .columns1-4 {
+        width: 25%;
+    }
+    .columns2-4 {
+        width: 50%;
+    }
+    .columns3-4 {
+        width: 75%;
+    }
+    .columns1-3 {
+        width: 33.3%;
+    }
+    .columns2-3 {
+        width: 66.6%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

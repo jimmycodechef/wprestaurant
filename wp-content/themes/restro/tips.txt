@@ -1,0 +1,14 @@
+Q: How we can add FontAwesome 5.0.8
+   I could not find the right ay to add FontAwesome 5.0.8, which is the newest verion. Could you please share the method?
+A: Hey Jimmy
+   In the case of version 5
+   font-family should be:   font-family: "Font Awesome 5 Brands";
+   The css file should be "font-awesome-all.min.css" and finally, the folder, instead of fonts/ should be webfonts
+
+Q: I am not sure why I am getting this error at bottom of the page:
+   Notice: ob_end_flush(): failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\wprestaurant\wp-includes\functions.php on line 3729
+   Notice: ob_end_flush(): failed to send buffer of zlib output compression (1) in C:\MAMP\htdocs\wprestaurant\wp-includes\functions.php on line 3729
+   The error is highlighted in Yellow in below screenshot.
+A: you can add this inside your functions.php:
+   remove_action( 'shutdown', 'wp_ob_end_flush_all', 1 );
+
